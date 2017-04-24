@@ -1,19 +1,22 @@
+" Let pathogen handles plugins
+execute pathogen#infect()
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"" alternatively, pass a path where Vundle should install plugins
+""call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'YouCompleteMe'
+"" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'YouCompleteMe'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+"" All of your Plugins must be added before the following line
+"call vundle#end()            " required
 
 "filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -31,6 +34,9 @@ filetype plugin on
 " YouCompleteMe options
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
+" yankring options
+let g:yankring_history_dir = '~/.vim/temp'
+
 " make backspace and del keys work like most other apps
 set backspace=2
 :fixdel
@@ -44,6 +50,9 @@ highlight Normal ctermbg=256 ctermfg=46
 
 " Turn on syntax highlight
 syntax on
+
+" Show relative line number
+set relativenumber
 
 " Always display file name
 set ls=2
@@ -161,9 +170,24 @@ colorscheme elflord
 " Do not wrap text (i.e., break line if past textwidth)
 set fo-=t
 
+" Wait very little for combined commands
+set timeoutlen=350
+
 " Remap some commands
+
+" Normal mode
+nnoremap ww :w<Enter>
+nnoremap qq :q<Enter>
+nnoremap qa :qa<Enter>
+nnoremap rr R
 nnoremap <C-a> GVgg
 nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
 nnoremap <C-t> :tabnew <Enter>
+
+" Visual mode
+vnoremap qq <Esc>
+vnoremap i I
+
+" Insert mode
 inoremap qq <Esc>
