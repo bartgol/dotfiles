@@ -3,10 +3,6 @@ if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
-# Change the annoyng fact that HOME is set to /ascldap/users/lbertag
-# due to the fact that /ascldap/users -> /home
-HOME=/home/lbertag
-
 # Load git completion stuff
 source $HOME/.git-completion.bash
 
@@ -41,12 +37,6 @@ export PRINTER=Lead
 alias ls='ls --color'
 alias vi='vim'
 alias ping='ping -c3'
-alias load-modules-common='source ~/modules/common'
-alias load-modules-gcc='source ~/modules/gcc'
-alias load-modules-intel='source ~/modules/intel'
-alias load-modules-trilinos-gcc='source ~/modules/trilinos-gcc'
-alias load-modules-trilinos-debug-gcc='source ~/modules/trilinos-debug-gcc'
-alias load-modules-trilinos-intel='source ~/modules/trilinos-intel'
 alias octave='octave --no-gui'
 
 # PATH env variable
