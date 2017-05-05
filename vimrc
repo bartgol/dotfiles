@@ -135,6 +135,9 @@ set viminfo='50,h,n~/.viminfo
 " Store a ton of history (default is 20)
 set history=1000
 
+" Remove scratch preview window
+set completeopt-=preview
+
 " set vim to chdir for each file
 if exists('+autochdir')
     set autochdir
