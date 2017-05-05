@@ -175,9 +175,6 @@ set timeoutlen=350
 
 " Remap some commands
 
-" The map leader
-let mapleader="\<Space>"
-
 " Normal mode
 nnoremap ww :w<Enter>
 nnoremap qq :q<Enter>
