@@ -35,6 +35,7 @@ export PRINTER=Lead
 
 # User specific aliases and functions
 alias ls='ls --color'
+alias lla='ls -la'
 alias vi='vim'
 alias ping='ping -c3'
 alias octave='octave --no-gui'
