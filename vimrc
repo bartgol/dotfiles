@@ -111,7 +111,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Search highlight
 set hlsearch
-hi Search guibg=LightBlue.
 
 " Incremental search
 set incsearch
@@ -148,6 +147,7 @@ endif
 " Tell vim to ignore certain files patterns in netrw
 let g:netrw_list_hide= '.*\.swp$,^\./$'
 let g:netrw_hide=1
+let g:netrw_keepdir=0
 
 " Backup files location
 set backup                    " keep a backup file
@@ -183,6 +183,8 @@ nnoremap ww :w<Enter>
 nnoremap qq :q<Enter>
 nnoremap qa :qa<Enter>
 nnoremap rr R
+nnoremap wa :wa<Enter>
+nnoremap sw dwi
 nnoremap <C-a> GVgg
 nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
