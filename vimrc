@@ -184,7 +184,7 @@ nnoremap qq :q<Enter>
 nnoremap qa :qa<Enter>
 nnoremap rr R
 nnoremap wa :wa<Enter>
-nnoremap sw dwi
+nnoremap sw cw
 nnoremap <C-a> GVgg
 nnoremap <C-o> :tabedit . <Enter>
 nnoremap <C-z> u
