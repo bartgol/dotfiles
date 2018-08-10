@@ -37,6 +37,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " yankring options
 let g:yankring_history_dir = '~/.vim/temp'
 
+" nerdcommented options
+let g:NERDSpaceDelims = 1
+
 " make backspace and del keys work like most other apps
 set backspace=2
 :fixdel
@@ -73,9 +76,9 @@ autocmd BufNewFile,BufRead makefile* setlocal noexpandtab
 autocmd BufNewFile,BufRead MAKEFILE* setlocal noexpandtab
 
 " Automatic re-tab
-if has("autocmd")
-    autocmd BufReadPost * if &modifiable | retab | endif
-endif
+" if has("autocmd")
+    " autocmd BufReadPost * if &modifiable | retab | endif
+" endif
 
 " Line numbering
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -107,7 +110,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$\| \t/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Autoremove trailing white space on save
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Search highlight
 set hlsearch
