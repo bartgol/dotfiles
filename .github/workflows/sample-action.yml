@@ -10,14 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: dowload-art
+      - name: check-artifact-exists
+        uses: LIT-Protocol/artifact-exists-action@v0
+        with:
+          name: master_sha
+      - if: ${{steps.check-artifact-exists.outputs.exists}}
+        name: dowload-art
         uses: actions/download-artifact@v4
         with:
           name: master_sha
           path: master_sha.txt
-
-      - name: print_artifact_sha
+      - if: ${{steps.check-artifact-exists.outputs.exists}}
+        name: print-artifact
         run: |
           value=`cat master_sha.txt'
           echo "result: $value"
-
+      - if: ${{ ! steps.check-artifact-exists.outputs.exists }}
+        run: echo "no artifact stored"
