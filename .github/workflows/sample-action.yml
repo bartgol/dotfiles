@@ -28,7 +28,7 @@ jobs:
       - if: ${{ ! steps.check-artifact-exists.outputs.exists }}
         run: echo "no artifact stored"
       - name: gen-artifact
-        run: git rev-parse --short HEAD > master_sha.txt
+        run: ${{ github.event.pull_request.base.sha }} > master_sha.txt
       - name: show-new-sha
         run: cat master_sha.txt
       - name: upload-artifact
