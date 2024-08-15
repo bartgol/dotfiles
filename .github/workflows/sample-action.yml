@@ -1,0 +1,23 @@
+name: Dummy Action
+
+on:
+  pull_request:
+    branches: ["master"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: dowload-art
+        uses: actions/download-artifact@v4
+        with:
+          name: master_sha
+          path: master_sha.txt
+
+      - name: print_artifact_sha
+        run: |
+          value=`cat master_sha.txt'
+          echo "result: $value"
+
